@@ -14,6 +14,7 @@
 # marked-vars
 <!-- Description -->
 A simple Marked extension to enable inline variables to be used.
+Based on UziTech's [marked-extension-template](https://github.com/markedjs/marked-extension-template).
 
 # Usage
 <!-- Show most examples of how to use this extension -->
