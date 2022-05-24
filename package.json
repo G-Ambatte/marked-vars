@@ -1,7 +1,7 @@
 {
-  "name": "marked-extension-template",
-  "version": "0.0.0",
-  "description": "marked extension template",
+  "name": "marked-vars",
+  "version": "0.0.1",
+  "description": "marked variables",
   "main": "./src/index.js",
   "browser": "./lib/index.umd.js",
   "type": "module",
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/markedjs/marked-extension-template.git"
+    "url": "git+https://github.com/G-Ambatte/marked-vars.git"
   },
-  "author": "Tony Brix <Tony@Brix.ninja> (https://Tony.Brix.ninja)",
+  "author": "G-Ambatte",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/markedjs/marked-extension-template/issues"
+    "url": "https://github.com/G-Ambatte/marked-vars/issues"
   },
-  "homepage": "https://github.com/markedjs/marked-extension-template#readme",
+  "homepage": "https://github.com/G-Ambatte/marked-vars#readme",
   "peerDependencies": {
     "marked": "^4.0.16"
   },
