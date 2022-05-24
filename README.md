@@ -3,7 +3,7 @@
 
 # TODO:
 
-- [ ] Replace information in `/README.md`
+- [x] Replace information in `/README.md`
 - [ ] Replace information in `/package.json`
 - [ ] Write extension in `/src/index.js`
 - [ ] Write tests in `/spec/index.test.js`
