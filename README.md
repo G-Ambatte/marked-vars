@@ -4,7 +4,7 @@
 # TODO:
 
 - [x] Replace information in `/README.md`
-- [ ] Replace information in `/package.json`
+- [x] Replace information in `/package.json`
 - [ ] Write extension in `/src/index.js`
 - [ ] Write tests in `/spec/index.test.js`
 - [ ] Uncomment release in `/.github/workflows/main.yml`
