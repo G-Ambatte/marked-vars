@@ -11,30 +11,37 @@
 
 <!-- Delete this line and above -->
 
-# marked-|this-extension|
+# marked-vars
 <!-- Description -->
+A simple Marked extension to enable inline variables to be used.
 
 # Usage
 <!-- Show most examples of how to use this extension -->
 
 ```js
 const marked = require("marked");
-const |thisExtension| = require("marked-|this-extension|");
+const marked-vars = require("marked-vars");
 
 // or ES Module script
 // import marked from "https://cdn.jsdelivr.net/gh/markedjs/marked/lib/marked.esm.js";
 // import this extension from "https://cdn.jsdelivr.net/gh/UziTech/marked-|this-extension|/lib/index.mjs";
 
 const options = {
-	// |default options|
+	enable : true
 };
 
-marked.use(|thisExtension|(options));
+marked.use(marked-vars(options));
 
-marked("|example markdown|");
-// <p>|example html|</p>
+marked("[key]::value\n [key]");
+// <p>value</p>
 ```
 
 ## `options`
 
-<!-- If there are no options you can delete this section -->
+* enable
+	*(true|false)*
+	Enable use of Markdown variables.
+	
+* multiline (NYI)
+	*(true|false)*
+	Enable multiline variables
