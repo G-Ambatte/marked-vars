@@ -38,10 +38,10 @@ marked("[key]::value\n [key]");
 
 ## `options`
 
-* enable
-	*(true|false)*
+* enable  
+	*(true|false)*  
 	Enable use of Markdown variables.
 	
-* multiline (NYI)
-	*(true|false)*
+* multiline (NYI)  
+	*(true|false)*  
 	Enable multiline variables
