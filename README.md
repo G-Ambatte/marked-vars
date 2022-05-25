@@ -33,7 +33,7 @@ const options = {
 
 marked.use(marked-vars(options));
 
-marked("[key]<<[value]\n [key]>>\n");
+marked("[key]<<[value]\n [key]>>");
 // <p> value</p>
 ```
 
