@@ -33,12 +33,17 @@ describe('markedVars', () => {
 
   test('6. undefined key', () => {
     marked.use(markedVars());
-    expect(marked('ABC\nMNO\n[key_6]>>\nXYZ\n')).toBe('<p>ABC\nMNO\n[key_6]>>\nXYZ</p>\n');
+    expect(marked('ABC\nMNO\n[key_6]>>\nXYZ\n')).toBe('<p>ABC\nMNO\n[key_6]&gt;&gt;\nXYZ</p>\n');
   });
 
   test('7. undefined key, markdown in key', () => {
     marked.use(markedVars());
-    expect(marked('ABC\nMNO\n[*key_7*]>>\nXYZ\n')).toBe('<p>ABC\nMNO\n[<em>key_7</em>]>>\nXYZ</p>\n');
+    expect(marked('ABC\nMNO\n[*key_7*]>>\nXYZ\n')).toBe('<p>ABC\nMNO\n[<em>key_7</em>]&gt;&gt;\nXYZ</p>\n');
+  });
+
+  test('8. recursion attempts fail', () => {
+    marked.use(markedVars());
+    expect(marked('[key_7a]<<[key_7b]\n[[key_7a]>>]<<[value_7b]\n[key_7b]>>\n')).toBe('<p>[[key_7a]&gt;&gt;]&lt;&lt;[value_7b]\n[key_7b]&gt;&gt;</p>\n');
   });
 
   test('99. text from README.md', () => {
