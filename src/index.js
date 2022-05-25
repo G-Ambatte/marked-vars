@@ -64,7 +64,7 @@ export default function(options = { enable: true }) {
             if (output) {
               return this.parser.parseInline(output.tokens);
             }
-            return `[${this.parser.parseInline(token.tokens)}]>>`;
+            return `\[${this.parser.parseInline(token.tokens)}\]&gt;&gt;`;
             // return output;
           }
         }
