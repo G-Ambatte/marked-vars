@@ -5,8 +5,8 @@
 
 - [x] Replace information in `/README.md`
 - [x] Replace information in `/package.json`
-- [ ] Write extension in `/src/index.js`
-- [ ] Write tests in `/spec/index.test.js`
+- [x] Write extension in `/src/index.js`
+- [x] Write tests in `/spec/index.test.js`
 - [ ] Uncomment release in `/.github/workflows/main.yml`
 
 <!-- Delete this line and above -->
@@ -33,16 +33,12 @@ const options = {
 
 marked.use(marked-vars(options));
 
-marked("[key]::[value]\n [key]");
-// <p>value</p>
+marked("[key]<<[value]\n [key]>>\n");
+// <p> value</p>
 ```
 
 ## `options`
 
 * enable  
-	*(true|false)*  
+	*(true|false >> default: true)*  
 	Enable use of Markdown variables.
-	
-* multiline (NYI)  
-	*(true|false)*  
-	Enable multiline variables
