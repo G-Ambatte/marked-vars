@@ -8,7 +8,7 @@ export default {
   coverageDirectory: 'coverage',
   coverageThreshold: {
     global: {
-      branches: 84.61,
+      branches: 100,
       functions: 100,
       lines: 100,
       statements: 100
