@@ -1,5 +1,5 @@
-export default function(options = { enable: true }) {
-  if (options.enable === false) return false;
+export default function(options) {
+  // console.log(options);
   const variables = [];
   return {
     extensions: [
