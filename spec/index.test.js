@@ -21,27 +21,32 @@ describe('markedVars', () => {
     expect(marked('ABC\n[key_3]<<[value_3]\nMNO\nkey_3>>\nXYZ')).toBe('<p>ABC\nMNO\nkey_3&gt;&gt;\nXYZ</p>\n');
   });
 
-  test('4. define and call', () => {
+  test('4. variable definition removed from output, other markdown tokens exist in output', () => {
+    marked.use(markedVars());
+    expect(marked('**ABC**\n[key_3]<<[value_3]\nMNO\nkey_3>>\nXYZ')).toBe('<p><strong>ABC</strong>\nMNO\nkey_3&gt;&gt;\nXYZ</p>\n');
+  });
+
+  test('5. define and call', () => {
     marked.use(markedVars());
     expect(marked('ABC\n[key_4]<<[value_4]\nMNO\n[key_4]>>\nXYZ\n')).toBe('<p>ABC\nMNO\nvalue_4\nXYZ</p>\n');
   });
 
-  test('5. define and call, markdown in value', () => {
+  test('6. define and call, markdown in value', () => {
     marked.use(markedVars());
     expect(marked('ABC\n[key_5]<<[*value_5*]\nMNO\n[key_5]>>\nXYZ\n')).toBe('<p>ABC\nMNO\n<em>value_5</em>\nXYZ</p>\n');
   });
 
-  test('6. undefined key', () => {
+  test('7. undefined key', () => {
     marked.use(markedVars());
     expect(marked('ABC\nMNO\n[key_6]>>\nXYZ\n')).toBe('<p>ABC\nMNO\n[key_6]&gt;&gt;\nXYZ</p>\n');
   });
 
-  test('7. undefined key, markdown in key', () => {
+  test('8. undefined key, markdown in key', () => {
     marked.use(markedVars());
     expect(marked('ABC\nMNO\n[*key_7*]>>\nXYZ\n')).toBe('<p>ABC\nMNO\n[<em>key_7</em>]&gt;&gt;\nXYZ</p>\n');
   });
 
-  test('8. recursion attempts fail', () => {
+  test('9. recursion attempts fail', () => {
     marked.use(markedVars());
     expect(marked('[key_7a]<<[key_7b]\n[[key_7a]>>]<<[value_7b]\n[key_7b]>>\n')).toBe('<p>[[key_7a]&gt;&gt;]&lt;&lt;[value_7b]\n[key_7b]&gt;&gt;</p>\n');
   });
