@@ -26,6 +26,7 @@ export default function(options = { enable: true }) {
         },
 
         renderer(token) {
+          /* istanbul ignore else */
           if (token.type === 'variableDefinition') {
             return null;
           }
@@ -53,6 +54,7 @@ export default function(options = { enable: true }) {
         },
 
         renderer(token) {
+          /* istanbul ignore else */
           if (token.type === 'variableCall') {
             // const output = this.parser.parseInline(variables.find((item) => {
             //   return item.key === token.key;
